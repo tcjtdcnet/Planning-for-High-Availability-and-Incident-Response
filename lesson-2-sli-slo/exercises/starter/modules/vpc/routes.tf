@@ -33,6 +33,9 @@
    destination_cidr_block = "0.0.0.0/0"
    gateway_id             = aws_internet_gateway.this[0].id
 
+   # fix Error: api error RouteAlreadyExists
+   lifecycle { ignore_changes = [destination_cidr_block] }
+
    timeouts {
      create = "5m"
    }
