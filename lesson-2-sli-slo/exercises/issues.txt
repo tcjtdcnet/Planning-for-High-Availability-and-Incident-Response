@@ -1,0 +1,49 @@
+Helm
+====
+
+helm version
+version.BuildInfo{Version:"v3.17.1", GitCommit:"980d8ac1939e39138101364400756af2bdee1da5", GitTreeState:"clean", GoVersion:"go1.23.6"}
+
+
+Terraform
+=========
+terraform version
+Terraform v1.11.1
+on linux_amd64
+
+ Warning: Argument is deprecated
+│ 
+│   with module.vpc.aws_eip.nat,
+│   on modules/vpc/routes.tf line 54, in resource "aws_eip" "nat":
+│   54:    vpc = true
+│ 
+│ use domain attribute instead
+│ 
+│ (and one more similar warning elsewhere)
+
+ Warning: Argument is deprecated
+│ 
+│   with module.vpc.aws_eip.nat[0],
+│   on modules/vpc/routes.tf line 54, in resource "aws_eip" "nat":
+│   54:    vpc = true
+│ 
+│ use domain attribute instead
+╵
+╷
+│ Error: api error RouteAlreadyExists: Route in Route Table (rtb-048128b46825a67ae) with destination (0.0.0.0/0) already exists
+│ 
+│   with module.vpc.aws_route.public_internet_gateway[1],
+│   on modules/vpc/routes.tf line 29, in resource "aws_route" "public_internet_gateway":
+│   29:  resource "aws_route" "public_internet_gateway" {
+│ 
+
+terraform logs
+==============
+2025-03-06T08:48:24.530+0100 [INFO]  provider.terraform-provider-aws_v5.89.0_x5: Retrieved caller identity from STS: tf_req_id=26eef641-803e-bb11-30ec-40b6f88cc6b9 tf_rpc=ConfigureProvider tf_mux_provider="*schema.GRPCProviderServer" tf_provider_addr=registry.terraform.io/hashicorp/aws @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.62/logging/tf_logger.go:39 @module=aws.aws-base timestamp="2025-03-06T08:48:24.530+0100"
+2025-03-06T08:48:24.623+0100 [INFO]  Starting apply for module.vpc.aws_route.public_internet_gateway[1]
+2025-03-06T08:48:25.180+0100 [ERROR] provider.terraform-provider-aws_v5.89.0_x5: Response contains error diagnostic: tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=fff2b3c5-141b-d7b2-4095-fc963ba425e0 tf_resource_type=aws_route @caller=github.com/hashicorp/terraform-plugin-go@v0.26.0/tfprotov5/internal/diag/diagnostics.go:58 diagnostic_detail="" diagnostic_severity=ERROR diagnostic_summary="api error RouteAlreadyExists: Route in Route Table (rtb-048128b46825a67ae) with destination (0.0.0.0/0) already exists" tf_proto_version=5.8 tf_rpc=ApplyResourceChange @module=sdk.proto timestamp="2025-03-06T08:48:25.180+0100"
+2025-03-06T08:48:25.181+0100 [ERROR] vertex "module.vpc.aws_route.public_internet_gateway[1]" error: api error RouteAlreadyExists: Route in Route Table (rtb-048128b46825a67ae) with destination (0.0.0.0/0) already exists
+2025-03-06T08:48:25.195+0100 [INFO]  backend-s3: Uploading remote state: tf_backend.operation=Put tf_backend.req_id=558033c5-57dd-6d8d-0dfe-5a7be91139f5 tf_backend.s3.bucket=udacity-tf-tcj tf_backend.s3.path=terraform/terraform.tfstate
+2025-03-06T08:48:25.618+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.89.0/linux_amd64/terraform-provider-aws_v5.89.0_x5 id=11236
+
+
