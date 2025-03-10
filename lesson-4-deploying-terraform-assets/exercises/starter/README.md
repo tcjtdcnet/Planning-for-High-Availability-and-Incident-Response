@@ -16,7 +16,7 @@
 
 4. Deploy Terraform infrastructure
     - Clone the starter code from the git repo to a folder CloudShell
-    - `cd` into the `starter` folder
+    - `cd` into the `starter/zone1` folder
     - `terraform init`
     - `terraform apply`
 
