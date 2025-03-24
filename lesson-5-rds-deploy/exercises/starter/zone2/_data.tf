@@ -16,6 +16,7 @@ data "aws_caller_identity" "current" {}
    }
  }
 
+# This block points on the primary s3
 data "terraform_remote_state" "primary" {
   backend = "s3" 
   config = {
