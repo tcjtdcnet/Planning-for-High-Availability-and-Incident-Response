@@ -1,0 +1,49 @@
+EAST-1
+======
+"ImageId": "ami-0c9a1f49e9526cb0f"
+
+EAST-2
+======
+"ImageId": "ami-0659c6cc9902d163f"
+
+WEST-1
+======
+ImageId": "ami-02a4feb612558d834"
+
+Buckets
+-----------
+udacity-tcj-east-2
+udacity-tcj-west-1
+
+Keys
+-----------
+east-2		(ZONE1)
+west-1		(ZONE2)
+
+Kubernetes config
+-----------------
+arn:aws:eks:us-east-2:382859003481:cluster/udacity-cluster
+
+Pods
+-----------------
+@stue:~/git/Planning-for-High-Availability-and-Incident-Response/project/starter-code/zone1> kubectl get pods --all-namespaces
+NAMESPACE     NAME                       READY   STATUS    RESTARTS   AGE
+kube-system   aws-node-pz7g5             2/2     Running   0          23m
+kube-system   coredns-6b94694fcb-cpf99   1/1     Running   0          26m
+kube-system   coredns-6b94694fcb-fpztq   1/1     Running   0          26m
+kube-system   kube-proxy-knxsw           1/1     Running   0          23m
+
+Grafana credentials
+-------------------
+@stue:~/git/Planning-for-High-Availability-and-Incident-Response/project> kubectl --namespace monitoring get secrets prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
+prom-operator
+
+Public-ip
+---------
+3.145.168.106
+
+Token
+-----
+"token": "RBH4X657GWPZQ0SW2R7JVL6F32KGYC0GB9MWA0GRGQNVQT6EC0"
+
+
