@@ -1,0 +1,23 @@
+# Deployed HA infrastructure in Zone1
+# Output from terraform
+
+kubernetes_service.grafana-external: Creation complete after 5s [id=monitoring/grafana-external]
+╷
+│ Warning: Argument is deprecated
+│ 
+│   with module.vpc.aws_eip.nat[0],
+│   on modules/vpc/routes.tf line 54, in resource "aws_eip" "nat":
+│   54:    vpc = true
+│ 
+│ vpc is deprecated. Use domain instead.
+╵
+
+Apply complete! Resources: 50 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+account_id = "382859003481"
+caller_arn = "arn:aws:iam::382859003481:user/tcj"
+caller_user = "AIDAVSJBMYZMYUICE32LT"
+db_cluster_id = "arn:aws:rds:us-east-2:382859003481:cluster:udacity-db-cluster"
+
