@@ -1,14 +1,15 @@
 EAST-1
 ======
-"ImageId": "ami-0c9a1f49e9526cb0f"
+"ImageId": "ami-0c9e562f7c741d384"
 
 EAST-2
 ======
-"ImageId": "ami-0659c6cc9902d163f"
+"ImageId": "ami-0f04a9fe1d3a748be"
 
 WEST-1
 ======
-ImageId": "ami-02a4feb612558d834"
+"ImageId": "ami-060e80d1d1a6850cf"
+
 
 Buckets
 -----------
@@ -40,7 +41,8 @@ prom-operator
 
 Public-ip
 ---------
-3.145.168.106
+3.148.246.210
+
 
 Token
 -----
