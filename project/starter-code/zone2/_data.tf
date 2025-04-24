@@ -16,15 +16,13 @@ data "aws_caller_identity" "current" {}
    }
  }
 
-data "terraform_remote_state" "primary" {
+data "terraform_remote_state" "vpc" {
   backend = "s3" 
   config = {
-     bucket = "udacity-tcj-east-2" # Replace it with your S3 bucket name which is in us-east-2 region
+     bucket = "udacity-tcj" # Replace it with your S3 bucket name which is in us-east-2 region
      key    = "terraform/terraform.tfstate"
      region = "us-east-2"
    }
-
-
 }
 
 data "aws_iam_policy" "instance-policy" {

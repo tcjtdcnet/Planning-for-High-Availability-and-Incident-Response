@@ -1,20 +1,19 @@
 EAST-1
 ======
-"ImageId": "ami-0c9e562f7c741d384"
+"ImageId": "ami-0a67caae7f428b201"
 
 EAST-2
 ======
-"ImageId": "ami-0f04a9fe1d3a748be"
+ImageId": "ami-0b648a1618ac6f7d8"
 
 WEST-1
 ======
-"ImageId": "ami-060e80d1d1a6850cf"
+"ImageId": "ami-054a92818833959b8"
 
-
-Buckets
------------
-udacity-tcj-east-2
-udacity-tcj-west-1
+TF buckets
+----------
+East-2: udacity-tcj
+west-1: udacity-tcj-west
 
 Keys
 -----------
@@ -23,7 +22,7 @@ west-1		(ZONE2)
 
 Kubernetes config
 -----------------
-arn:aws:eks:us-east-2:382859003481:cluster/udacity-cluster
+
 
 Pods
 -----------------

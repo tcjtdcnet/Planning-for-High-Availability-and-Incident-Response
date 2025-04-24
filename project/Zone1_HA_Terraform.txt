@@ -1,7 +1,3 @@
-# Deployed HA infrastructure in Zone1
-# Output from terraform
-
-kubernetes_service.grafana-external: Creation complete after 5s [id=monitoring/grafana-external]
 ╷
 │ Warning: Argument is deprecated
 │ 
@@ -20,4 +16,8 @@ account_id = "382859003481"
 caller_arn = "arn:aws:iam::382859003481:user/tcj"
 caller_user = "AIDAVSJBMYZMYUICE32LT"
 db_cluster_id = "arn:aws:rds:us-east-2:382859003481:cluster:udacity-db-cluster"
+vpc = [
+  "subnet-0c94af6eed7600602",
+  "subnet-0c3d143622c7809a2",
+]
 
